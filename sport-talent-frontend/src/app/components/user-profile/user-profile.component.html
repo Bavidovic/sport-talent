@@ -1,0 +1,20 @@
+<div *ngIf="user; else loading" class="flex mt-5 ml-5">
+  <img
+    [src]="getUserAvatar()"
+    alt="{{ user.firstName }} {{ user.lastName }}"
+    class="object-cover h-[250px] w-[250px]"
+  />
+  <div class="ml-5">
+    <h1 class="text-2xl font-bold mb-5">
+      {{ user.firstName }} {{ user.lastName }}
+    </h1>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+    <p><strong>Location:</strong> {{ user.location }}</p>
+    <p><strong>Sport:</strong> {{ user.type_of_sport }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading user data...</p>
+</ng-template>

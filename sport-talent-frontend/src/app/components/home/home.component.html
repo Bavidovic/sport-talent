@@ -1,0 +1,18 @@
+<div id="home" class="bg-cover bg-center h-96 flex items-center justify-center">
+  <div class="text-white bg-black bg-opacity-50 p-8 rounded-md">
+    <h1 class="text-4xl font-bold mb-4">
+      Dobrodošli u Mrežu Sportskih Talenta
+    </h1>
+    <p class="text-xl text-center">
+      Povežite se, pokažite svoje vještine i unaprijedite svoju sportsku
+      karijeru.
+    </p>
+    <div class="flex flex-col mt-4">
+      @for (user of users; track user.id) {
+      <a [routerLink]="['/user', user.id]" class="underline">
+        {{ user.firstName }} {{ user.lastName }}
+      </a>
+      }
+    </div>
+  </div>
+</div>
